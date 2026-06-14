@@ -1,9 +1,10 @@
-// БАЗА ДАННЫХ БЛЮД (23 штук) С ФОТОГРАФИЯМИ
-// 🌟 РАБОЧИЙ МАССИВ ДЛЯ КОПИРОВКИ
+// ==========================================
+// БАЗА ДАННЫХ БЛЮД (23 штуки) С ИКОНКАМИ
+// ==========================================
 const DISHES_DB = [
     // Пицца
     { id: 1, name: "Маргарита", description: "Классическая итальянская пицца с томатами и моцареллой", price: 450, category: "pizza", icon: "🍕", weight: "450г", imageUrl: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f8a35c'/%3E%3Ctext x='50%25' y='45%25' font-size='60' text-anchor='middle' dominant-baseline='middle'%3E🍕%3C/text%3E%3Ctext x='50%25' y='65%25' font-size='24' fill='white' text-anchor='middle' font-family='Arial'%3EМаргарита%3C/text%3E%3C/svg%3E" },
-    { id: 2, name: "Пепперони", description: "Острая пицца с колбасой пепперони и сыром", price: 520, category: "pizza", icon: "🍕", weight: "500г", imageUrl: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23d9534f'/%3E%3Ctext x='50%25' y='45%25' font-size='60' text-anchor='middle' dominant-baseline='middle'%3E🍕%3C/text%3E%3Ctext x='50%25' y='65%25' font-size='24' fill='white' text-anchor='middle'%3EПепперони%3C/text%3E%3C/svg%3E" },
+    { id: 2, name: "Пепперони", description: "Острая пицца с колбасой пепперони и сыром", price: 520, category: "pizza", icon: "🍕", weight: "500г", imageUrl: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23d9534f'/%3E%3Ctext x='50%25' y='45%25' font-size='60' text-anchor='middle'%3E🍕%3C/text%3E%3Ctext x='50%25' y='65%25' font-size='24' fill='white' text-anchor='middle'%3EПепперони%3C/text%3E%3C/svg%3E" },
     { id: 3, name: "Гавайская", description: "Курица, ананасы, моцарелла, томатный соус", price: 550, category: "pizza", icon: "🍍", weight: "480г", imageUrl: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f0ad4e'/%3E%3Ctext x='50%25' y='45%25' font-size='60' text-anchor='middle'%3E🍍%3C/text%3E%3Ctext x='50%25' y='65%25' font-size='24' fill='white' text-anchor='middle'%3EГавайская%3C/text%3E%3C/svg%3E" },
     { id: 4, name: "Четыре сыра", description: "Дор блю, пармезан, моцарелла, горгонзола", price: 590, category: "pizza", icon: "🧀", weight: "490г", imageUrl: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23ffc107'/%3E%3Ctext x='50%25' y='45%25' font-size='60' text-anchor='middle'%3E🧀%3C/text%3E%3Ctext x='50%25' y='65%25' font-size='24' fill='white' text-anchor='middle'%3EЧетыре сыра%3C/text%3E%3C/svg%3E" },
     { id: 5, name: "Мясная", description: "Ветчина, бекон, пепперони, курица, говядина", price: 650, category: "pizza", icon: "🥓", weight: "550г", imageUrl: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23b52b1d'/%3E%3Ctext x='50%25' y='45%25' font-size='60' text-anchor='middle'%3E🥓%3C/text%3E%3Ctext x='50%25' y='65%25' font-size='24' fill='white' text-anchor='middle'%3EМясная%3C/text%3E%3C/svg%3E" },
@@ -34,29 +35,48 @@ const DISHES_DB = [
     { id: 22, name: "Свежий сок апельсиновый", description: "100% апельсин, без сахара", price: 210, category: "drink", icon: "🧃", volume: "0.4л", imageUrl: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23e67e22'/%3E%3Ctext x='50%25' y='45%25' font-size='60' text-anchor='middle'%3E🧃%3C/text%3E%3Ctext x='50%25' y='65%25' font-size='24' fill='white' text-anchor='middle'%3EАпельсиновый сок%3C/text%3E%3C/svg%3E" },
     { id: 23, name: "Кола", description: "Охлажденный напиток", price: 120, category: "drink", icon: "🥤", volume: "0.5л", imageUrl: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23333'/%3E%3Ctext x='50%25' y='45%25' font-size='60' text-anchor='middle'%3E🥤%3C/text%3E%3Ctext x='50%25' y='65%25' font-size='24' fill='white' text-anchor='middle'%3EКола%3C/text%3E%3C/svg%3E" }
 ];
-// Загрузка корзины из localStorage
+
+// ==========================================
+// ГЛОБАЛЬНАЯ ПЕРЕМЕННАЯ КОРЗИНЫ
+// ==========================================
+let cart = {
+    items: [],      // каждый элемент: { dishId, quantity }
+    subtotal: 0
+};
+
+// ==========================================
+// РАБОТА С LOCALSTORAGE
+// ==========================================
 function loadCartFromStorage() {
     const saved = localStorage.getItem('food_delivery_cart');
     if (saved) {
         try {
-            cart = JSON.parse(saved);
-        } catch(e) { console.error(e); }
+            const parsed = JSON.parse(saved);
+            if (parsed.items && Array.isArray(parsed.items)) {
+                cart = parsed;
+            } else {
+                cart = { items: [], subtotal: 0 };
+            }
+        } catch(e) { 
+            console.error('Ошибка загрузки корзины:', e);
+            cart = { items: [], subtotal: 0 };
+        }
+    } else {
+        cart = { items: [], subtotal: 0 };
     }
     recalcCart();
     saveCartToStorage();
 }
 
-// Сохранение корзины в localStorage
 function saveCartToStorage() {
     localStorage.setItem('food_delivery_cart', JSON.stringify(cart));
 }
 
-// Пересчет суммы корзины
 function recalcCart() {
     let sum = 0;
-    for(let item of cart.items) {
+    for (let item of cart.items) {
         const dish = DISHES_DB.find(d => d.id === item.dishId);
-        if(dish) sum += dish.price * item.quantity;
+        if (dish) sum += dish.price * item.quantity;
     }
     cart.subtotal = sum;
     saveCartToStorage();
@@ -76,13 +96,11 @@ window.FoodDeliveryAPI = class FoodDeliveryAPI {
         await delay(300);
         let result = [...DISHES_DB];
         
-        // Фильтр по категории
-        if(filters.category && filters.category !== 'all') {
+        if (filters.category && filters.category !== 'all') {
             result = result.filter(d => d.category === filters.category);
         }
         
-        // Поиск по названию или описанию
-        if(filters.search) {
+        if (filters.search) {
             const s = filters.search.toLowerCase();
             result = result.filter(d => 
                 d.name.toLowerCase().includes(s) || 
@@ -90,25 +108,22 @@ window.FoodDeliveryAPI = class FoodDeliveryAPI {
             );
         }
         
-        // Фильтр по цене
-        if(filters.minPrice && filters.minPrice !== '') {
+        if (filters.minPrice && filters.minPrice !== '') {
             result = result.filter(d => d.price >= parseInt(filters.minPrice));
         }
-        if(filters.maxPrice && filters.maxPrice !== '') {
+        if (filters.maxPrice && filters.maxPrice !== '') {
             result = result.filter(d => d.price <= parseInt(filters.maxPrice));
         }
         
-        // Ограничение количества
-        if(filters.limit) {
+        if (filters.limit) {
             result = result.slice(0, parseInt(filters.limit));
         }
         
-        // Сортировка
-        if(filters.sort === 'price_asc') {
+        if (filters.sort === 'price_asc') {
             result.sort((a,b) => a.price - b.price);
-        } else if(filters.sort === 'price_desc') {
+        } else if (filters.sort === 'price_desc') {
             result.sort((a,b) => b.price - a.price);
-        } else if(filters.sort === 'name') {
+        } else if (filters.sort === 'name') {
             result.sort((a,b) => a.name.localeCompare(b.name));
         }
         
@@ -119,12 +134,13 @@ window.FoodDeliveryAPI = class FoodDeliveryAPI {
     static async addToCart(dishId, quantity) {
         await delay(200);
         const existing = cart.items.find(i => i.dishId === dishId);
-        if(existing) {
+        if (existing) {
             existing.quantity += quantity;
         } else {
             cart.items.push({ dishId: dishId, quantity: quantity });
         }
         recalcCart();
+        this.updateCartCount(); // обновляем счётчик на всех страницах
         return { status: 'success', message: 'Добавлено в корзину' };
     }
     
@@ -132,13 +148,14 @@ window.FoodDeliveryAPI = class FoodDeliveryAPI {
     static async updateCartItem(dishId, quantity) {
         await delay(200);
         const item = cart.items.find(i => i.dishId === dishId);
-        if(item) {
-            if(quantity <= 0) {
+        if (item) {
+            if (quantity <= 0) {
                 cart.items = cart.items.filter(i => i.dishId !== dishId);
             } else {
                 item.quantity = quantity;
             }
             recalcCart();
+            this.updateCartCount();
         }
         return { status: 'success' };
     }
@@ -148,6 +165,7 @@ window.FoodDeliveryAPI = class FoodDeliveryAPI {
         await delay(200);
         cart.items = cart.items.filter(i => i.dishId !== dishId);
         recalcCart();
+        this.updateCartCount();
         return { status: 'success' };
     }
     
@@ -171,7 +189,8 @@ window.FoodDeliveryAPI = class FoodDeliveryAPI {
     // Применение промокода
     static async applyPromoCode(code) {
         await delay(400);
-        if(code === 'ВКУС2024' || code === 'WELCOME' || code === 'СКИДКА20') {
+        const validCodes = ['ВКУС2024', 'WELCOME', 'СКИДКА20'];
+        if (validCodes.includes(code)) {
             let discount = Math.min(cart.subtotal * 0.2, 500);
             return { status: 'success', discount: discount };
         } else {
@@ -183,24 +202,28 @@ window.FoodDeliveryAPI = class FoodDeliveryAPI {
     static async createOrder(orderData) {
         await delay(600);
         const orderId = 'ORD-' + Math.floor(Math.random() * 10000);
-        // Очищаем корзину
         cart.items = [];
         recalcCart();
+        this.updateCartCount();
         return { status: 'success', orderId: orderId };
     }
     
-    // Обновление счетчика в корзине
+    // Обновление счетчика в корзине (ищет все элементы с id="cartCount")
     static updateCartCount() {
         const totalQty = cart.items.reduce((sum, i) => sum + i.quantity, 0);
         const spans = document.querySelectorAll('#cartCount');
         spans.forEach(span => {
-            if(span) span.textContent = totalQty;
+            if (span) span.textContent = totalQty;
         });
     }
 };
 
-// Инициализация
+// Инициализация: загружаем корзину при старте
 loadCartFromStorage();
+// Дополнительно обновляем счётчик после загрузки DOM
+document.addEventListener('DOMContentLoaded', () => {
+    FoodDeliveryAPI.updateCartCount();
+});
 
 // ==========================================
 // ВСПОМОГАТЕЛЬНЫЕ ГЛОБАЛЬНЫЕ ФУНКЦИИ
@@ -227,7 +250,7 @@ window.showNotification = function(message, type = 'success') {
 };
 
 window.escapeHtml = function(text) {
-    if(!text) return '';
+    if (!text) return '';
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
@@ -240,15 +263,15 @@ window.addToCartHandler = async function(dishId, buttonElement) {
     
     try {
         const result = await FoodDeliveryAPI.addToCart(dishId, quantity);
-        if(result.status === 'success') {
+        if (result.status === 'success') {
             showNotification('✅ Товар добавлен в корзину!', 'success');
-            FoodDeliveryAPI.updateCartCount();
-            if(buttonElement) {
+            if (buttonElement) {
                 buttonElement.style.transform = 'scale(0.95)';
                 setTimeout(() => { buttonElement.style.transform = 'scale(1)'; }, 200);
             }
         }
     } catch(error) {
         showNotification('❌ Ошибка при добавлении', 'error');
+        console.error(error);
     }
 };
